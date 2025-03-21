@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_tourist/core/database/cache/cahce_helper.dart';
 import 'package:hello_tourist/core/functions/navigation.dart';
 import 'package:hello_tourist/core/utils/app_strings.dart';
 import 'package:hello_tourist/core/utils/app_text_styles.dart';
@@ -13,15 +14,20 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
-    delayedNavigation();
+    bool isOnboardingDone = CahceHelper().getData(key: "isOnboardingDone") ?? false;
+    if (isOnboardingDone) {
+    delayedNavigation('/signup');
+    } else {
+    delayedNavigation('/onboarding');
+    }
     super.initState();
   }
 
-  void delayedNavigation() {
+  void delayedNavigation(String path) {
     Future.delayed(
       const Duration(seconds: 2),
       () {
-        customPushReplacement(context, '/onboarding');
+        customPushReplacement(context, path);
       },
     );
   }

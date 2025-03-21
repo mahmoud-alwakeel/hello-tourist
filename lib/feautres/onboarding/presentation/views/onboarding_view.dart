@@ -67,16 +67,6 @@ class OnboardingButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (currentIndex == onboardingList.length - 1) {
-      return AppMainButton(
-        title: 'Next',
-        onPressed: () {
-          pageController.nextPage(
-            duration: const Duration(milliseconds: 400),
-            curve: Curves.bounceInOut,
-          );
-        },
-      );
-    } else {
       return Column(
         children: [
           AppMainButton(
@@ -95,6 +85,16 @@ class OnboardingButtons extends StatelessWidget {
             ),
           ),
         ],
+      );
+    } else {
+      return AppMainButton(
+        title: 'Next',
+        onPressed: () {
+          pageController.nextPage(
+            duration: const Duration(milliseconds: 400),
+            curve: Curves.bounceInOut,
+          );
+        },
       );
     }
   }
