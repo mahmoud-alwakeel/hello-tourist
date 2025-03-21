@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hello_tourist/core/database/cache/cahce_helper.dart';
 import 'package:hello_tourist/core/functions/navigation.dart';
+import 'package:hello_tourist/core/services/service_locator.dart';
 import 'package:hello_tourist/core/utils/app_text_styles.dart';
 
 class OnboardingNavBar extends StatelessWidget {
@@ -14,7 +15,7 @@ class OnboardingNavBar extends StatelessWidget {
       alignment: Alignment.centerRight,
       child: TextButton(
         onPressed: () {
-          CahceHelper().saveData(key: "isOnboardingDone", value: true);
+          getIt<CacheHelper>().saveData(key: "isOnboardingDone", value: true);
           customPushReplacement(context, '/signup');
         },
         child: Text(

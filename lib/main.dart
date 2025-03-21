@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:hello_tourist/core/database/cache/cahce_helper.dart';
 import 'package:hello_tourist/core/routes/app_router.dart';
+import 'package:hello_tourist/core/services/service_locator.dart';
 import 'package:hello_tourist/core/utils/app_colors.dart';
 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await CahceHelper().init();
+  setupServiceLocator();
+  await getIt<CacheHelper>().init();
   runApp(const HelloTourist());
 }
 

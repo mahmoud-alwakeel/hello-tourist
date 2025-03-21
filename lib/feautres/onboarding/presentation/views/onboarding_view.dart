@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hello_tourist/core/database/cache/cahce_helper.dart';
 import 'package:hello_tourist/core/functions/navigation.dart';
+import 'package:hello_tourist/core/services/service_locator.dart';
 import 'package:hello_tourist/core/utils/app_strings.dart';
 import 'package:hello_tourist/core/utils/app_text_styles.dart';
 import 'package:hello_tourist/core/widgets/app_main_button.dart';
@@ -72,11 +74,13 @@ class OnboardingButtons extends StatelessWidget {
           AppMainButton(
             title: AppStrings.createAccount,
             onPressed: () {
+              getIt<CacheHelper>().saveData(key: "isOnboardingDone", value: true);
               customPushReplacement(context, '/signup');
             },
           ),
           TextButton(
             onPressed: () {
+              getIt<CacheHelper>().saveData(key: "isOnboardingDone", value: true);
               customPushReplacement(context, '/login');
             },
             child: const Text(
