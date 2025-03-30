@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "359983468336",
+    "project_id": "hello-tourist-32683",
+    "storage_bucket": "hello-tourist-32683.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359983468336:android:131c177ec19166a71682f5",
+        "android_client_info": {
+          "package_name": "com.example.hello_tourist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBhYxA5KdihWk5M_MBlsTgky5QQGLe2yo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
